@@ -2,10 +2,21 @@
 	"name": "tezos-jobs-backend",
 	"version": "0.0.1",
 	"description": "Tezos Jobs backend",
+	"keywords": [
+		"tezos",
+		"jobs",
+		"api"
+	],
+	"homepage": "https://tezosjobs.com",
 	"main": "index.js",
-	"author": "Richard Ayotte",
+	"repository": "github.com:RichAyotte/tezos-jobs-backend",
+	"author": {
+		"name": "Richard Ayotte",
+		"email": "rich@ayottesoftware.com",
+		"url": "https://ayottesoftware.com"
+	},
 	"license": "MIT",
-	"private": true,
+	"private": false,
 	"scripts": {
 		"dev": "NODE_ENV=development; nodemon --harmony index.js | pino-pretty --colorize --errorProps --levelFirst --translateTime SYS:HH:MM:ss.L",
 		"build-docs": "node utils/generate-schema-docs.js",
@@ -31,7 +42,7 @@
 		"sequelize": "^4.42.0"
 	},
 	"devDependencies": {
-		"eslint": "^5.13.0",
+		"eslint": "^5.14.0",
 		"eslint-config-ayotte": "^1.3.12",
 		"eslint-plugin-graphql": "^3.0.3",
 		"eslint-plugin-import": "^2.16.0",
