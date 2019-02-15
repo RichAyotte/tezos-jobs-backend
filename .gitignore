@@ -1,0 +1,8 @@
+# Order matters
+config/*
+!config/default.js
+!config/sequelize.js
+
+node_modules/
+
+*.sublime-project

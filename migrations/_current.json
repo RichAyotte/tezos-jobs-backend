@@ -1,0 +1,130 @@
+{
+    "tables": {
+        "Companies": {
+            "tableName": "Companies",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER(10).UNSIGNED"
+                },
+                "name": {
+                    "allowNull": true,
+                    "unique": true,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "description": {
+                    "allowNull": true,
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "websiteUrl": {
+                    "allowNull": true,
+                    "field": "websiteUrl",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "address": {
+                    "allowNull": true,
+                    "field": "address",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "province": {
+                    "allowNull": true,
+                    "field": "province",
+                    "seqType": "Sequelize.INTEGER(6)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "charset": "utf8",
+            "indexes": []
+        },
+        "Jobs": {
+            "tableName": "Jobs",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER(10).UNSIGNED"
+                },
+                "title": {
+                    "allowNull": true,
+                    "field": "title",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "description": {
+                    "allowNull": true,
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "minSalary": {
+                    "allowNull": true,
+                    "field": "minSalary",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "maxSalary": {
+                    "allowNull": true,
+                    "field": "maxSalary",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "salaryCurrency": {
+                    "allowNull": true,
+                    "field": "salaryCurrency",
+                    "seqType": "Sequelize.CHAR(5)"
+                },
+                "isRemote": {
+                    "allowNull": true,
+                    "field": "isRemote",
+                    "seqType": "Sequelize.INTEGER(4)"
+                },
+                "location": {
+                    "allowNull": true,
+                    "field": "location",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "applicationUrl": {
+                    "allowNull": true,
+                    "field": "applicationUrl",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "CompanyId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Companies",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "CompanyId",
+                    "seqType": "Sequelize.INTEGER(10).UNSIGNED"
+                }
+            },
+            "charset": "utf8",
+            "indexes": []
+        }
+    },
+    "revision": 2
+}
