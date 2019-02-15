@@ -6,7 +6,7 @@
  * @license     MIT License
  */
 
-/* eslint-disable no-sync */
+/* eslint-disable no-sync, prefer-template */
 
 'use strict'
 
@@ -31,7 +31,7 @@ const main = async () => {
 
 	renderSchema(schema, {
 		printer(md) {
-			fs.appendFileSync(filePath, md)
+			fs.appendFileSync(filePath, md + '\n')
 		}
 	})
 }
