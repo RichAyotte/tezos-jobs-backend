@@ -8,11 +8,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "NODE_ENV=development; nodemon --harmony index.js | pino-pretty --colorize --errorProps --levelFirst --translateTime SYS:HH:MM:ss.L",
-		"serve": "nodemon --harmony index.js",
-		"ship-dev": "shipit develop deploy",
-		"ship-staging": "shipit staging deploy",
-		"ship-production": "shipit master deploy",
-		"test": "intern | pino-pretty",
+		"build-docs": "node utils/generate-schema-docs.js",
 		"make-migration": "makemigration | pino-pretty",
 		"run-migration": "runmigration | pino-pretty"
 	},
@@ -40,6 +36,7 @@
 		"eslint-plugin-graphql": "^3.0.3",
 		"eslint-plugin-import": "^2.16.0",
 		"eslint-plugin-promise": "^4.0.1",
+		"graphql-markdown": "^5.0.1",
 		"mysql": "^2.16.0",
 		"pino-pretty": "^2.5.0",
 		"pino-pretty-min": "^0.2.1",
