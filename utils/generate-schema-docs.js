@@ -11,7 +11,7 @@
 'use strict'
 
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs').promises
 
 const {loadSchemaJSON, renderSchema} = require('graphql-markdown')
 
@@ -19,21 +19,16 @@ global.appRoot = path.resolve(`${__dirname}/..`)
 
 const main = async () => {
 	const filePath = `${appRoot}/API.md`
-
-	try {
-		fs.unlinkSync(filePath)
-	}
-	catch (error) {
-		console.warn(`${filePath} not found.`)
-	}
-
 	const schema = await loadSchemaJSON(`${appRoot}/schema`)
 
+	let buffer = ''
 	renderSchema(schema, {
 		printer(md) {
-			fs.appendFileSync(filePath, md + '\n')
+			buffer += md + '\n'
 		}
 	})
+
+	await fs.writeFile(filePath, buffer)
 }
 
 main()
