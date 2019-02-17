@@ -16,7 +16,7 @@
 		"url": "https://ayottesoftware.com"
 	},
 	"license": "MIT",
-	"private": false,
+	"private": true,
 	"scripts": {
 		"dev": "NODE_ENV=development; nodemon --harmony index.js | pino-pretty --colorize --errorProps --levelFirst --translateTime SYS:HH:MM:ss.L",
 		"build-docs": "node utils/generate-schema-docs.js",
